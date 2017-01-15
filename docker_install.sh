@@ -12,7 +12,7 @@ mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet
 find /opt/dotnet -name '*.so' -type f -print | xargs ldd | grep 'not found'
 sh -c 'echo "deb http://llvm.org/apt/jessie/ llvm-toolchain-jessie-3.6 main" > /etc/apt/sources.list.d/llvm-toolchain.list'
 sh -c 'echo "deb-src http://llvm.org/apt/jessie/ llvm-toolchain-jessie-3.6 main" > /etc/apt/sources.list.d/llvm-toolchain.list'
-apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 15CF4D18AF4F7421
+apt-key adv --keyserver  ha.pool.sks-keyservers.net --recv-keys 15CF4D18AF4F7421
 apt-get update && apt-get install liblldb-3.6
 sh -c 'echo "deb [arch=amd64] http://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
 apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
