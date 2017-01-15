@@ -7,13 +7,23 @@ build:web:
   - dotnet --info
   - cd src/DomainModel && dotnet restore && dotnet build
   - ls
+  - cd .. 
+  - ls
   - cd src/DataAccessSqliteProvider && dotnet restore && dotnet build
+  - ls
+  - cd .. 
   - ls
   - cd src/DataAccessPostgreSqlProvider && dotnet restore && dotnet build
   - ls
+  - cd .. 
+  - ls
   - cd src/DataAccessMySqlProvider && dotnet restore && dotnet build
   - ls 
+  - cd .. 
+  - ls
   - cd src/DataAccessMsSqlServerProvider && dotnet restore && dotnet build
+  - ls
+  - cd .. 
   - ls
   - cd src/AspNet5MultipleProject && dotnet restore && dotnet build
   - ls
