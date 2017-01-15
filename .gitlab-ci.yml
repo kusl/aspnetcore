@@ -4,7 +4,7 @@ before_script:
 build:web:
   script:
   - dotnet --info
-  - cd ../../src/DomainModel && dotnet restore && dotnet build
+  - cd src/DomainModel && dotnet restore && dotnet build
   - cd ../../src/DataAccessSqliteProvider && dotnet restore && dotnet build
   - cd ../../src/DataAccessPostgreSqlProvider && dotnet restore && dotnet build
   - cd ../../src/DataAccessMySqlProvider && dotnet restore && dotnet build
