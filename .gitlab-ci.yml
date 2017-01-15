@@ -5,7 +5,7 @@ build:web-stable:
   script:
   - sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
   - apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
-  - apt-get install apt-transport-https -yqq
+  - apt-get install apt-transport-https ca-certificates -yqq
   - apt-get update -yqq
   - apt-get install dotnet-dev-1.0.0-preview2.1-003177 -yqq
   - dotnet --info
@@ -19,7 +19,7 @@ build:web-next:
   script:
   - sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
   - apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 417A0893
-  - apt-get install apt-transport-https -yqq
+  - apt-get install apt-transport-https ca-certificates -yqq
   - apt-get update
   - apt-get install dotnet-dev-1.0.0-preview4-004233 -yqq
   - dotnet --info
