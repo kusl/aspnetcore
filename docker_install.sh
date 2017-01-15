@@ -9,4 +9,5 @@ apt-get install git -yqq
 apt-get install curl libunwind8 gettext -yqq
 curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?LinkID=835021
 mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet
+find /opt/dotnet -name '*.so' -type f -print | xargs ldd | grep 'not found'
 ln -s /opt/dotnet/dotnet /usr/local/bin
