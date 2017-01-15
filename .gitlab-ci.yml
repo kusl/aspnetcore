@@ -4,4 +4,4 @@ before_script:
 build:web:
   script:
   - ls
-  - cd src/Aspnet5MultipleProject/ && dotnet restore && dotnet build
+  - cd src/AspNet5MultipleProject && dotnet restore && dotnet build
