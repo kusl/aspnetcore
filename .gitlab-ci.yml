@@ -1,6 +1,34 @@
 image: ubuntu:xenial
 before_script:
 - bash docker_install.sh
+services:
+  - postgres
+variables:
+  # Configure postgres service (https://hub.docker.com/_/postgres/)
+  POSTGRES_DB: custom_db
+  POSTGRES_USER: custom_user
+  POSTGRES_PASSWORD: custom_pass
+# create_tables_latest:
+#   image: postgres
+#   script:
+#   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
+#   - export PGPASSWORD=$POSTGRES_PASSWORD
+#   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+#   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f create_tables.sql
+# create_tables_961:
+#   image: postgres:9.6.1
+#   script:
+#   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
+#   - export PGPASSWORD=$POSTGRES_PASSWORD
+#   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+#   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f create_tables.sql
+# create_tables_955:
+#   image: postgres:9.5.5
+#   script:
+#   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
+#   - export PGPASSWORD=$POSTGRES_PASSWORD
+#   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+#   - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -f create_tables.sql
 build:web-stable:
   script:
   - sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
