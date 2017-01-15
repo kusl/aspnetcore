@@ -29,3 +29,4 @@ build:web-next:
   - cd ../../src/DataAccessMySqlProvider && dotnet restore && dotnet build
   - cd ../../src/DataAccessMsSqlServerProvider && dotnet restore && dotnet build
   - cd ../../src/AspNet5MultipleProject && dotnet restore && dotnet build
+  allow_failure: true
