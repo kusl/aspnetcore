@@ -1,4 +1,4 @@
-image: debian:latest
+image: ubuntu:xenial
 before_script:
 - bash docker_install.sh
 build:web:
