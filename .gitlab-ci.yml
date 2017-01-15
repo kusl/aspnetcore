@@ -1,0 +1,6 @@
+image: debian:latest
+before_script:
+- bash docker_install.sh
+build:web:
+  script:
+  - cd src/Aspnet5MultipleProject/ && dotnet restore && dotnet build
